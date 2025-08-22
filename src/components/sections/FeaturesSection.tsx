@@ -86,7 +86,7 @@ const FeaturesSection = () => {
             return (
               <Card 
                 key={index} 
-                className="bg-gradient-card border-border/50 hover:border-primary/30 transition-all duration-300 group hover:glow-accent"
+                className="bg-slate-800/50 border-border/50 hover:border-primary/30 transition-all duration-300 group hover:glow-accent backdrop-blur-sm"
               >
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between mb-3">

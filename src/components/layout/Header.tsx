@@ -7,15 +7,21 @@ const Header = () => {
         <div className="flex items-center space-x-2">
           <img 
             src="/logo.png" 
-            alt="SkillAce Logo" 
+            alt="AI-Interview Guide Logo" 
             className="w-8 h-8 object-contain"
           />
-          <span className="text-xl font-bold text-foreground">SkillAce</span>
+          <span className="text-xl font-bold text-foreground">AI-Interview Guide</span>
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
+          <a href="/" className="text-muted-foreground hover:text-foreground transition-colors">
+            Home
+          </a>
           <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
             Features
+          </a>
+          <a href="/ai-interview" className="text-muted-foreground hover:text-foreground transition-colors">
+            AI Interview
           </a>
           <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
             Pricing
