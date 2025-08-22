@@ -64,15 +64,15 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-24 relative">
+    <section id="features" className="py-24 relative bg-gradient-to-br from-slate-900 to-slate-800">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4">
             Features
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Everything You Need to{" "}
-            <span className="bg-gradient-accent bg-clip-text text-transparent">Succeed</span>
+            <span className="text-amber-400">Everything You Need to</span>{" "}
+            <span className="text-emerald-400">Succeed</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Our comprehensive platform provides all the tools and resources you need 
