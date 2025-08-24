@@ -38,8 +38,9 @@ const HeroSection = () => {
           <Button 
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6 glow-primary animate-pulse-glow"
+            onClick={() => window.location.href = '/interview-setup'}
           >
-            Start Free Interview
+            Start Practice Interview
           </Button>
           <Button 
             variant="outline" 

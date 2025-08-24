@@ -32,12 +32,19 @@ const AIInterview = () => {
   const [transcript, setTranscript] = useState("");
   const [isInterviewStarted, setIsInterviewStarted] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [candidateData, setCandidateData] = useState<any>(null);
   
   const navigate = useNavigate();
   const recognitionRef = useRef<any>(null);
   const speechSynthesisRef = useRef<SpeechSynthesisUtterance | null>(null);
 
   useEffect(() => {
+    // Get candidate data from session storage
+    const storedData = sessionStorage.getItem('interviewSetupData');
+    if (storedData) {
+      setCandidateData(JSON.parse(storedData));
+    }
+
     // Initialize Speech Recognition
     if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
       const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -170,6 +177,11 @@ const AIInterview = () => {
             </Button>
             <Separator orientation="vertical" className="h-6" />
             <h1 className="text-xl font-bold">AI Interview Practice</h1>
+            {candidateData && (
+              <div className="ml-4 text-sm text-muted-foreground">
+                {candidateData.name} • {candidateData.role} • {candidateData.interviewType}
+              </div>
+            )}
           </div>
           <Badge variant="secondary" className="flex items-center space-x-2">
             <MessageSquare className="w-3 h-3" />
