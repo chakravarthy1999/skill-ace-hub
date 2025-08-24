@@ -1,8 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import LoginDialog from "@/components/auth/LoginDialog";
+import { useState } from "react";
 import heroImage from "@/assets/hero-coding.jpg";
 
 const HeroSection = () => {
+  const [loginOpen, setLoginOpen] = useState(false);
+
+  const handleGoogleLogin = () => {
+    // Connect this to your backend authentication
+    console.log('Google login clicked');
+    setLoginOpen(false);
+  };
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
       {/* Background Image */}
@@ -38,7 +47,7 @@ const HeroSection = () => {
           <Button 
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6 glow-primary animate-pulse-glow"
-            onClick={() => window.location.href = '/interview-setup'}
+            onClick={() => setLoginOpen(true)}
           >
             Start Practice Interview
           </Button>
@@ -71,6 +80,12 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+      
+      <LoginDialog 
+        open={loginOpen} 
+        onOpenChange={setLoginOpen}
+        onGoogleLogin={handleGoogleLogin}
+      />
     </section>
   );
 };

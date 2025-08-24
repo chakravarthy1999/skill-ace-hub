@@ -2,8 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Sparkles } from "lucide-react";
+import LoginDialog from "@/components/auth/LoginDialog";
+import { useState } from "react";
 
 const CTASection = () => {
+  const [loginOpen, setLoginOpen] = useState(false);
+
+  const handleGoogleLogin = () => {
+    // Connect this to your backend authentication
+    console.log('Google login clicked');
+    setLoginOpen(false);
+  };
   return (
     <section className="py-24 relative">
       <div className="container mx-auto px-4">
@@ -37,7 +46,7 @@ const CTASection = () => {
               <Button 
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6 glow-primary group"
-                onClick={() => window.location.href = '/interview-setup'}
+                onClick={() => setLoginOpen(true)}
               >
                 Start Practice Interview
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -68,6 +77,12 @@ const CTASection = () => {
           </CardContent>
         </Card>
       </div>
+      
+      <LoginDialog 
+        open={loginOpen} 
+        onOpenChange={setLoginOpen}
+        onGoogleLogin={handleGoogleLogin}
+      />
     </section>
   );
 };

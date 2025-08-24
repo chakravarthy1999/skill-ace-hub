@@ -1,6 +1,15 @@
 import { Button } from "@/components/ui/button";
+import LoginDialog from "@/components/auth/LoginDialog";
+import { useState } from "react";
 
 const Header = () => {
+  const [loginOpen, setLoginOpen] = useState(false);
+
+  const handleGoogleLogin = () => {
+    // Connect this to your backend authentication
+    console.log('Google login clicked');
+    setLoginOpen(false);
+  };
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -32,14 +41,27 @@ const Header = () => {
         </nav>
         
         <div className="flex items-center space-x-4">
-          <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+          <Button 
+            variant="ghost" 
+            className="text-muted-foreground hover:text-foreground"
+            onClick={() => setLoginOpen(true)}
+          >
             Login
           </Button>
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground glow-primary">
+          <Button 
+            className="bg-primary hover:bg-primary/90 text-primary-foreground glow-primary"
+            onClick={() => setLoginOpen(true)}
+          >
             Get Started
           </Button>
         </div>
       </div>
+      
+      <LoginDialog 
+        open={loginOpen} 
+        onOpenChange={setLoginOpen}
+        onGoogleLogin={handleGoogleLogin}
+      />
     </header>
   );
 };
