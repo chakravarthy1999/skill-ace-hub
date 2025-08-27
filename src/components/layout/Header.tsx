@@ -26,17 +26,17 @@ const Header = () => {
           <a href="/" className="text-muted-foreground hover:text-foreground transition-colors">
             Home
           </a>
-          <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
-            Features
+          <a href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
+            About
           </a>
           <a href="/ai-interview" className="text-muted-foreground hover:text-foreground transition-colors">
             AI Interview
           </a>
-          <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+          <a href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">
             Pricing
           </a>
-          <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
-            About
+          <a href="/analytics" className="text-muted-foreground hover:text-foreground transition-colors">
+            Analytics
           </a>
         </nav>
         
