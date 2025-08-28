@@ -38,6 +38,9 @@ const Header = () => {
           <a href="/analytics" className="text-muted-foreground hover:text-foreground transition-colors">
             Analytics
           </a>
+          <a href="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
+            Dashboard
+          </a>
         </nav>
         
         <div className="flex items-center space-x-4">
