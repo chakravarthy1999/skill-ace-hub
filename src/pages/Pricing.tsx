@@ -1,11 +1,15 @@
+import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Star, Users, Zap } from "lucide-react";
+import { PaymentDialog } from "@/components/payment/PaymentDialog";
 
 const Pricing = () => {
+  const [isPaymentOpen, setIsPaymentOpen] = useState(false);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -157,7 +161,11 @@ const Pricing = () => {
                   </li>
                 </ul>
 
-                <Button className="w-full" variant="secondary">
+                <Button 
+                  className="w-full" 
+                  variant="secondary"
+                  onClick={() => setIsPaymentOpen(true)}
+                >
                   Upgrade to Premium
                 </Button>
               </CardContent>
@@ -199,6 +207,11 @@ const Pricing = () => {
         </div>
       </main>
       <Footer />
+      
+      <PaymentDialog 
+        open={isPaymentOpen} 
+        onOpenChange={setIsPaymentOpen} 
+      />
     </div>
   );
 };
