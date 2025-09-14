@@ -35,6 +35,9 @@ const Header = () => {
           <a href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">
             Pricing
           </a>
+          <a href="/resume-checker" className="text-muted-foreground hover:text-foreground transition-colors">
+            Resume Checker
+          </a>
           <a href="/analytics" className="text-muted-foreground hover:text-foreground transition-colors">
             Analytics
           </a>

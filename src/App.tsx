@@ -15,6 +15,9 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentFailed from "./pages/PaymentFailed";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import ResumeChecker from "./pages/ResumeChecker";
+import ResumeUpload from "./pages/ResumeUpload";
+import ResumeResults from "./pages/ResumeResults";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +41,9 @@ const App = () => (
           <Route path="/payment-failed" element={<PaymentFailed />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/resume-checker" element={<ResumeChecker />} />
+          <Route path="/resume-upload" element={<ResumeUpload />} />
+          <Route path="/resume-results" element={<ResumeResults />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
